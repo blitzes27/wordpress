@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Navigera till mappen där docker-compose.yml ligger
-#cd "$(dirname "$0")/test3"
-
-# Kör docker-compose up -d
-#docker compose up -d
 
 #skapar en dum container joinad nätverket uppgift för att kunna
 #ansluta med vår wordpress
@@ -12,25 +7,22 @@ docker run --name some-postgres –network uppgift -e POSTGRES_PASSWORD=mysecret
 
 sleep 8
 
-# Definiera variabler
-zip_file="test3.zip"
-target_directory="test3"
+#installera git hub hämtning
+sudo apt install git
 
-# Kontrollera om zip-filen finns
-if [ -f "$zip_file" ]; then
+sleep 8 
+
+#laddar hem git repo
+git clone https://github.com/blitzes27/wordpress.git -y
+
+sleep 20
+
+cd "wordpress"
+
     # Packa upp zip-filen
-    unzip "$zip_file"
+    unzip "test3"
 
-    # Kontrollera om uppzippning lyckades och mappen finns
-    if [ -d "$target_directory" ]; then
-        # Navigera till mappen
-        cd "$target_directory"
+        cd "test3"
 
         # Kör docker-compose up -d
         docker compose up -d
-    else
-        echo "Uppzippning misslyckades eller mappen '$target_directory' finns inte."
-    fi
-else
-    echo "Zip-filen '$zip_file' hittades inte."
-fi
