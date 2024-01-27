@@ -7,17 +7,6 @@ docker run --name some-postgres –network uppgift -e POSTGRES_PASSWORD=mysecret
 
 sleep 8
 
-#installera git hub hämtning
-sudo apt install git
-
-sleep 8 
-
-#laddar hem git repo
-git clone https://github.com/blitzes27/wordpress.git -y
-
-sleep 20
-
-cd "wordpress"
 
     # Packa upp zip-filen
     unzip "test3"
