@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #installera git hub hämtning
-sudo apt install git
+apt install git
 
 sleep 8 
 
