@@ -18,7 +18,7 @@ sleep 4
 #uppdaterar paket
 sudo apt update
 
-#Installerar zip för att kunna unzippa test3
+#Installerar zip för att kunna unzippa image
 sudo apt install zip
 
 cd "wordpress"
@@ -31,9 +31,9 @@ sleep 8
 
 
     # Packa upp zip-filen
-    unzip "test3"
+    unzip "image.zip"
 
-        cd "test3"
+        cd "image"
 
         # Kör docker-compose up -d
         docker compose up -d
