@@ -33,6 +33,8 @@ sleep 8
     # Packa upp zip-filen
     unzip "image.zip"
 
+    sleep 8
+
         cd "image"
 
         # Kör docker-compose up -d
